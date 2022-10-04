@@ -4,7 +4,7 @@ def employee_data():
     employee_name: str = input("Enter Employee Name \n")
     employee_basic_salary: int = int(input("Enter Employee Basic Salary \n"))
     employee_department: str = input("Enter Employee Department \n")
-    if employee_department not in ["sales", "marketing", "administration", "management"] and employee_number != sentinal:
+    if employee_department not in ["sales", "marketing", "administration", "management"] and employee_number == sentinal:
         print("Employee doesn't belong to valid department")
         exit()
     else:
