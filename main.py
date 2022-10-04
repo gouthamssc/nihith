@@ -1,11 +1,13 @@
 def employee_data():
     sentinal = 999
-    employee_number: str = input("Enter Employee Number \n")
+    employee_number: str = int(input("Enter Employee Number \n"))
     employee_name: str = input("Enter Employee Name \n")
     employee_basic_salary: int = int(input("Enter Employee Basic Salary \n"))
     employee_department: str = input("Enter Employee Department \n")
-    if employee_department not in ["sales", "marketing", "administration", "management"] and employee_number == sentinal:
+    if employee_department not in ["sales", "marketing", "administration", "management"]:
         print("Employee doesn't belong to valid department")
+        exit()
+    elif employee_number == sentinal:
         exit()
     else:
         print("\n")
