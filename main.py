@@ -1,27 +1,20 @@
-def employee_data():
-    sentinal = 1000
-    employee_number = int(input("Enter Employee Number \n"))
-    employee_name: str = input("Enter Employee Name \n")
-    employee_basic_salary: int = int(input("Enter Employee Basic Salary \n"))
-    employee_department: str = input("Enter Employee Department \n")
-    departments = ["sales", "marketing", "administration", "management"]
-    for employee_department in departments:
-        if employee_number == sentinal:
-            print("Employee doesn't belong to valid department")
-            break
-        else:
-            print("\n")
-            print("Employee Number is " + str(employee_number))
-            print("Employee Name is " + employee_name)
-            print("Employee Basic Salary is " + str(employee_basic_salary))
-            print("Employee Department is " + str(employee_department))
-            print("Employee VA is " + str(salary(employee_department, employee_basic_salary)[0]))
-            print("Employee DA is " + str(salary(employee_department, employee_basic_salary)[1]))
-            print("Employee GS is " + str(salary(employee_department, employee_basic_salary)[2]))
-            print("Employee CPP is " + str(salary(employee_department, employee_basic_salary)[3]))
-            print("Employee Federal Tax is " + str(salary(employee_department, employee_basic_salary)[4]))
-            print("Employee NetSalary is " + str(salary(employee_department, employee_basic_salary)[5]))
-            print("\n")
+def employee_data( employee_number,employee_name, employee_basic_salary, employee_department):
+    if employee_department not in ["sales", "marketing", "administration", "management"]:
+        print("Employee doesn't belong to valid department")
+        exit()
+    else:
+        print("\n")
+        print("Employee Number is " + str(employee_number))
+        print("Employee Name is " + employee_name)
+        print("Employee Basic Salary is " + str(employee_basic_salary))
+        print("Employee Department is " + str(employee_department))
+        print("Employee VA is " + str(salary(employee_department, employee_basic_salary)[0]))
+        print("Employee DA is " + str(salary(employee_department, employee_basic_salary)[1]))
+        print("Employee GS is " + str(salary(employee_department, employee_basic_salary)[2]))
+        print("Employee CPP is " + str(salary(employee_department, employee_basic_salary)[3]))
+        print("Employee Federal Tax is " + str(salary(employee_department, employee_basic_salary)[4]))
+        print("Employee NetSalary is " + str(salary(employee_department, employee_basic_salary)[5]))
+        print("\n")
 
 
 def salary(employee_department, employee_basic_salary):
@@ -57,5 +50,13 @@ def salary(employee_department, employee_basic_salary):
 
 if __name__ == '__main__':
     employee_count = int(input("Enter employee count \n"))
-    while employee_count:
-        employee_data()
+    sentinal = 1000
+    for i in range(employee_count):
+        employee_number: str = int(input("Enter Employee Number \n"))
+        employee_name: str = input("Enter Employee Name \n")
+        employee_basic_salary: int = int(input("Enter Employee Basic Salary \n"))
+        employee_department: str = input("Enter Employee Department \n")
+        if employee_number == sentinal:
+            break;
+        else:
+            employee_data(employee_number, employee_name, employee_basic_salary, employee_department)
