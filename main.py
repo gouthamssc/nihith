@@ -53,5 +53,6 @@ def salary(employee_department, employee_basic_salary):
 
 
 if __name__ == '__main__':
-    while True:
+    employee_count = int(input("Enter employee count \n"))
+    while employee_count:
         employee_data()
